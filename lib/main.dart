@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_firebase_authproj/login.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -38,30 +39,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _formKey = GlobalKey<FormState>();
-  late String _email;
-  late String _password;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(hintText: "Enter your email"),
-            ),
-            TextField(
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(hintText: "Enter your password"),
-            ),
-            SizedBox(height: 30),
-            ElevatedButton(onPressed: () {}, child: Text("Sign in"))
-          ],
-        ),
-      ),
-    );
+    return LoginWidget();
   }
 }
