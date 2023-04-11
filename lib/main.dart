@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_firebase_authproj/login.dart';
 import 'package:flutter_firebase_authproj/signup_screen.dart';
 import 'package:flutter_firebase_authproj/sucess_screen.dart';
+import 'package:flutter_firebase_authproj/verifyemail_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -55,9 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
           } else if (snapshot.hasError) {
             return Center(child: Text("something went wrong"));
           } else if (snapshot.hasData) {
-            return SucessWidget();
+            return VerifyEmailPage();
           } else {
-            return LoginWidget();
+            return SignUpWidget();
           }
         });
   }
