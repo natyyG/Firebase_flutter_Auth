@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_firebase_authproj/forgot_password.dart';
 import 'firebase_options.dart';
 
 class LoginWidget extends StatelessWidget {
@@ -28,7 +29,14 @@ class LoginWidget extends StatelessWidget {
               decoration: InputDecoration(hintText: "Enter your password"),
             ),
             SizedBox(height: 30),
-            ElevatedButton(onPressed: signIn, child: Text("Sign in"))
+            ElevatedButton(onPressed: signIn, child: Text("Sign in")),
+            GestureDetector(
+              child: Text('forgot password?'),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ForgotPasswordWidget())),
+            ),
           ],
         ),
       ),
