@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_firebase_authproj/login.dart';
+import 'package:flutter_firebase_authproj/signup_screen.dart';
 import 'package:flutter_firebase_authproj/sucess_screen.dart';
 import 'firebase_options.dart';
 
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
           } else if (snapshot.hasData) {
             return SucessWidget();
           } else {
-            return LoginWidget();
+            return SignUpWidget();
           }
         });
   }
